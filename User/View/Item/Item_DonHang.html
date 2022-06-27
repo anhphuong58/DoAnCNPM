@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../View/css/reset.css">
+    <link rel="stylesheet" href="../View/css/home.css">
+    <title>Item_DonHang</title>
+</head>
+<body>
+
+    <div class='user_cart-detail'>
+        <div class='user_cart-img'>
+            <?php
+             echo "<a href='?modDH=0&idUser=$user->id&idDH=$donhang->id_donhang' class='user_cart-detail'>
+                <img src='../View/image/GioHang.png' alt='' class='user_cart-image'>
+                 </a>";
+            ?>
+
+        </div>
+        <div class='user_cart-ingredient'>
+          <?php echo  "<a href='?modDH=0&idUser=$user->id&idDH=$donhang->id_donhang' >" ;?>
+                <h2 class='user_cart-name'>ID đơn hàng:  <?php echo $donhang->id_donhang;?></h2>
+                <span class='user_cart-money'><?php echo $donhang->price;?> đồng</span>
+            </a>
+            <p class='user_cart-trangthai'>Trạng thái: <?php echo $donhang->trangthai;?></p>
+
+        </div>
+    </div>
+                   
+</body>
+</html>

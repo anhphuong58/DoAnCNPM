@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../View/css/reset.css">
+    <link rel="stylesheet" href="../View/css/home.css">
+    <title>Title</title>
+</head>
+<body>
+    <div class="title">
+        <div class="title_img">
+            <?php
+                    if($user){
+                        echo "<a href='../Controller/User_Controller.php?modUser=0&id=$user->id'><img src='../View/image/Logo.png' alt='' class='title_img-logo'></a>";
+                    }
+                    else{
+                        echo '<a href="?modUser=0"><img src="../View/image/Logo.png" alt="" class="title_img-logo"></a>';
+                    }   
+                ?>
+        </div>
+        <form  method="post" class="title_search">
+            <input type="text" name="search" id="search" placeholder="Nhập mẫu bánh tìm kiếm" class="title_search-text">
+            <button type="submit"  class="title_search-btn"><i class="fa fa-search title_search-logo" aria-hidden="true"></i></button>
+        </form>
+        <div class="title_user">
+            <div class="title_user-logo">
+                <i class="fa fa-user-o" aria-hidden="true" style="font-size:3rem;color: rgb(190,30,45);"></i>
+            </div>
+            <div class="title_user-login">
+                <?php
+                    if($user){
+                        echo ' <span class="title_user-account">Xin chào</span> ';
+                        echo" <a href='../Controller/User_Controller.php?modUser=3&id=$user->id'>$user->name</a>";
+                    }
+                    else{
+                        echo ' <span class="title_user-account">Tài khoản</span> ';
+                        echo '<a href="../Controller/User_Controller.php?modUser=1">Đăng nhập, đăng ký</a>';
+                    }   
+                ?>
+            </div>
+        </div>
+        <div class="title_cart">
+            <div class="title_cart-logo">
+                <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:3rem;color: rgb(190,30,45);"></i>
+            </div>
+            <div class="title_cart-login">
+                <span class="title_cart-you">Giỏ hàng của bạn</span>
+                <?php
+                    if($user){
+                        echo" <a href='../Controller/User_Controller.php?modCart=0&id=$user->id'>Vận chuyển toàn quốc</a>";
+                    }
+                    else{
+                        echo '<a href="../Controller/User_Controller.php?modCart=0">Vận chuyển toàn quốc</a>';
+                    }   
+                ?>
+            </div>
+        </div>
+    </div>
+    <?php
+        if(isset($_REQUEST['search'])){
+            $text = $_REQUEST['search'];
+            echo("<meta http-equiv='refresh' content='0,url=?modCake=2&text=$text&id=$user->id'>"); //Refresh by HTTP META
+        }
+    ?>
+</body>
+</html>

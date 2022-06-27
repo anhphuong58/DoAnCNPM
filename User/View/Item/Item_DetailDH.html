@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../View/css/reset.css">
+    <link rel="stylesheet" href="../View/css/home.css">
+    <title>Item_DonHang_Detail</title>
+</head>
+<body>
+    <tr class="cart_table-trDetail">
+        <td class="cart_table-tdL">
+            <div class="cart_table-img">
+                <img src="<?php echo $cake[$i]->link ?>" alt="" class="cart_img">
+            </div>
+            <div class="cart_table-detail">
+                <h3 class="cart_table-name"><?php echo $cake[$i]->name ?></h3>
+                <?php 
+                if($cream[$i]){
+                 echo   "<p class='cart_table-size'>Vị: $cream[$i] </p>
+                    <p class='cart_table-size'>Size: $size[$i]  inch </p>";
+                }
+                ?>
+
+            </div>
+        </td>
+        <td class="cart_table-td">
+            <span class="cart_table-money"><?php echo $cake[$i]->price ?></span>
+        </td>
+        <td class="cart_table-td">
+            <?php
+            echo "<input type='text'  class='cart_table-quantity' readonly value=$soluong[$i]>";
+            ?>           
+        </td>
+        <td class="cart_table-td">
+            <span class="cart_table-totalmoney"><?php echo $soluong[$i]*$cake[$i]->price; ?></span>
+        </td>
+
+    </tr>
+</body>
+</html>
