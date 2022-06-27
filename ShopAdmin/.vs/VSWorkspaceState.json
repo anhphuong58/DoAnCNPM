@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\errors",
+    "\\app\\models",
+    "\\app\\public",
+    "\\app\\public\\css",
+    "\\app\\views",
+    "\\app\\views\\admin",
+    "\\app\\views\\admin\\partials",
+    "\\configs"
+  ],
+  "SelectedNode": "\\app\\public\\css\\test.css",
+  "PreviewInSolutionExplorer": false
+}
